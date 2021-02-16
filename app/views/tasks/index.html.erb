@@ -3,6 +3,12 @@
 <ul>
   <% @tasks.each do |task| %>
     <li>
+      <%= if task.completed == true
+            "Completed"
+          else
+            "Not Completed"
+          end
+       %>
       <%= link_to task.title, task_path(task) %>
       <%= link_to "Delete",
             task_path(task),
@@ -11,3 +17,4 @@
     </li>
   <% end %>
 </ul>
+
